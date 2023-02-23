@@ -1,0 +1,36 @@
+#include <iostream>
+#include <stack>
+#define loop(i, a, b) for(int i = a; i < b; ++i)
+#define MOD 1000000007
+using namespace std;
+
+typedef int64_t ll;
+typedef pair<int,int> pii;
+
+const int maxN = 1e6 +5;
+ll arre[maxN];
+ll xbox(int length){
+    ll suma = 0, maxi = -1e10;
+    int aux;
+    
+    for(int i = 0; i < length; ++i){
+        suma += arre[i];
+        maxi = max(maxi, suma);
+        if(suma < 0)
+            suma = 0;
+    } 
+    return maxi;
+}
+
+
+int main(){
+    ios_base::sync_with_stdio(0); cin.tie(0);
+    int t; cin>>t;
+    int le;
+    loop(i, 1, t+1){
+        cin>>le;
+        loop(i, 0, le)
+            cin>>arre[i];
+        cout<<"Case #"<<i<<": "<<xbox(le)<<"\n";
+    }
+}

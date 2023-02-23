@@ -1,0 +1,30 @@
+#include <iostream>
+#define loop(i, a, b) for(int i = a; i < b; ++i)
+#define MOD 1000000007
+using namespace std;
+
+typedef int64_t ll;
+
+string solve(string s){
+    string b = "facebook";
+    int indx = 0;
+    for(char x : s){
+        if(x == b.at(indx))
+            ++indx;
+        if(indx == b.size())
+            return "YES";
+    }
+    return "NO";
+}
+
+
+int main(){
+    ios_base::sync_with_stdio(0); cin.tie(0);
+    int t; cin>>t;
+    string s;
+    loop(i, 1, t+1){
+        cin>>s;
+        cout<<"Case #"<<i<<": "<<solve(s)<<"\n";
+    }
+
+}

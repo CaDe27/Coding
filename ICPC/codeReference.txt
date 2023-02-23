@@ -1,0 +1,388 @@
+TIPS:
+1. visita todas las componentes del grafo! 
+
+
+#include <iostream>
+#include <algorithm>
+#include <stdio.h>
+#include <string>
+#include <vector>
+#include <map>
+#include <math.h>
+#include <numeric>
+#include <queue>
+#include <stack>
+#include <utility>
+#include <queue>
+#include <set>
+#include <iomanip>
+
+using namespace std;
+
+typedef int64_t ll;
+
+typedef pair<int,ll> pill;
+typedef vector<pill> vill;
+
+typedef pair<int,int> pii;
+typedef vector<pii> vii;
+typedef vector<int> vi;
+typedef vector<int, pii> viii;
+
+#define MINF -1000000000000
+#define MOD 1000000007
+
+#define m(a,b) (a%b + b)%b
+#define loop(i,a,b) for(int i = a; i < b; ++i)
+#define loopi(i,a,b) for(int i = a; i <= b; ++i)
+#define invl(i,a,b) for(int i = a; i > b; --i)
+#define invli(i,a,b) for(int i = a; i >= b; --i)
+
+
+const int maxN = 100005;
+
+
+void solve(){
+
+}
+
+int main(){
+    ios_base::sync_with_stdio(0); cin.tie(0);
+    //if(fopen("case.txt", "r")) freopen("case.txt", "r", stdin);
+    int t = 1;
+    //int t; cin>>t;
+    loop(i, 0, t){
+        solve();
+    }
+    return 0; 
+}
+
+
+vi adj[maxN];
+int papa[maxN];
+bool visited[maxN];
+int level[maxN];
+
+
+
+DFS
+
+void dfs(int f, int nd){
+    for(int son : adj[nd]){
+        if(son == f) continue
+	//si eres back edge
+        if(visited[son]){
+		if(level[son] > level[nd])
+		else
+            
+        }
+        //si eres front edje
+        else if(!visited[son]){
+            dfs(nd, son);
+
+        }
+
+    }
+}
+
+void recorridoInicial(int nd){
+    for(pill h: arbol[nd])
+        if(h.first != papa[nd])
+        {
+            papa[h.first] = nd;
+            ++cantHijos[nd];
+            recorridoInicial(h.first);
+        }
+}
+
+Puentes
+// =========== Puentes 
+/*  
+    dp[u] = numero de back edges que van de un "hijo" de u a un "ancestro" de u
+    puente entre a y b syss 
+    dp[u] = 0
+
+    calculo de dp[u] = Suma(dp[hijos]) - backedgesQueLLeganAU + backEdgedSalenU 
+*/
+
+int dp[maxN];
+int llegan[maxN];
+bool hayPuente;
+
+void dfs(int f, int nd){
+    visited[nd] = true;
+    level[nd] = level[f] + 1;
+    int salen = 0;
+    for(int son : adj[nd]){
+        if(son == f) continue;
+        //si eres back edge
+        if(visited[son] && level[son] < level[nd]){
+            ++salen;
+            ++llegan[son];
+            roads.push_back(pii(nd, son));
+        }
+        //si eres front edje
+        else if(!visited[son]){
+            dfs(nd, son);
+            dp[nd] += dp[son]; 
+            roads.push_back(pii(nd, son));
+        }
+    }    
+    dp[nd] = dp[nd] - llegan[nd] + salen;
+    if(nd != 1 && dp[nd] == 0)
+        hayPuente = true;
+    
+}
+
+loop(i, 0, m){
+        int a, b;
+        cin>>a>>b;
+        adj[a].push_back(b);
+        adj[b].push_back(a);
+    }
+
+
+BFS
+void bfs(int i){
+    queue<pii> c;
+    c.push(pii(i,0));
+    int nd, v;
+
+    fill(visited, visited + n + 5, 0);
+    while(!c.empty()){
+        nd = c.front().first; v = c.front().second;
+        c.pop();
+        if(!visited[nd]){
+            visited[nd] = true;
+            
+            
+            //meto a mis hijos con distancia mas uno
+            for(int h: adj[nd])
+                c.push(pii(h, v+1));
+        }
+    }
+}
+
+//=================== LCA
+vi adj[maxN];
+int papa[maxN];
+bool visited[maxN];
+int level[maxN];
+//asumiento que los nodos van de 1 a n
+// si van de 0 a n-1 cambia el create LCA Table en el for nd = 1; nd < n
+//siempre asigna a la raiz como su propio padre
+
+struct node{
+	int level;
+}nodes[maxN+1];
+int table[LogN+1][maxN+1], n;
+int LogN = 18;
+void assignParents(int nd, int fa = nd){
+    for(int son: adj[nd]){
+        if(son != fa){
+            nodes[son].level = 1 + nodes[nd].level;
+            table[0][son] = nd;
+            //aqui puedes aprovechar para agregar funcionalidad que ocupes para el
+            //problema especifico
+            assignParents(son, nd);
+        }
+    }
+}
+
+//creates LCA Binary Lifting table
+void createLCATable(){
+    int mid;
+	for(int k = 1; k<=LogN; ++k){
+		for(int nd = 2; nd <= n; ++nd){
+           mid = table[k-1][nd];
+           table[k][nd] = table[k-1][mid];
+        }
+    }
+}
+
+//to get the k-th father of node i
+int jump(int i, int k){
+    int x=0;
+	while(k > 0){
+		if(k&1)
+			i = table[x][i];
+		++x;
+		k>>=1;
+	}
+	return i;
+}
+
+int lca(int i, int j){
+	//to put i and j in the same level
+    if(nodes[i].level< nodes[j].level)
+        j = jump(j, nodes[j].level-nodes[i].level);
+    else
+        i = jump(i, nodes[i].level-nodes[j].level);
+    
+    //these happens if one of them was lca of them
+    if(i==j)
+        return i;
+        
+	//these is to put both just below the LCA
+    for(int d = LogN; d>=0; --d){
+        if(table[d][i] != table[d][j]){
+            i = table[d][i];
+            j = table[d][j];
+        }
+    }
+    //as they were just below the LCA, the LCA is the parent of either of the nodes
+    return table[0][i];
+}
+
+
+Bin search
+
+int inf = 1, sup = r, mitad;
+    while(inf != sup){
+        mitad = (inf + sup)/2 +1;
+        if(sePuede(mitad))
+            inf = mitad;
+        else
+            sup = mitad - 1;
+    }
+
+
+//=============== Exponenciacion bianria
+ll binPow(ll base, ll exp){
+	ll r = 1;
+	while (exp > 0){
+		if(exp & 1)
+			r = (r*base) % MOD;
+		exp >>= 1;
+		base = (base * base) % MOD;
+	}
+	return r%MOD;
+} 
+
+lld binPow(lld b, lld e) {
+ if (!e) return 1;
+ lld ans = binPow(b, e/2);
+ ans *= ans;
+ ans %= MOD;
+ if (e & 1) {
+ ans *= b;
+ ans %= MOD;
+ }
+ return ans;
+}
+
+
+Fenwick Tree
+void update(int pos, ll x){
+    x = x%p;
+    while(pos <= l){
+        bit[pos] = (bit[pos] + x)%p;
+        pos += pos&(-pos);
+    }
+
+}
+
+ll query(int pos){
+    ll suma = 0;
+    while(pos > 0){
+        suma = (suma + bit[pos])%p;
+        pos -= pos&(-pos);
+    }
+    return suma;
+}
+
+ll query(int pos1, int pos2){
+	return query(pos2) - query(pos1-1);
+
+    ll resp = (query(pos2) - query(pos1-1) + p)%p;
+    resp = (resp * inverses(l - pos2)) %p;
+    if(resp < 0)
+        resp += p;
+    return resp;
+}
+
+long long binPowLoop(long long base, long long exp){
+	long long r = 1;
+	while (exp > 0){
+		if( exp & 1)
+			r = r*base;
+		exp >>= 1;
+		base = (base * base);
+	}
+	return r;
+} 
+
+long long binPowRecursive(long long a, long long b) {
+    if (b == 0)
+        return 1;
+    long long res = binpow(a, b / 2);
+    if (b % 2)
+        return res * res * a;
+    else
+        return res * res;
+}
+
+long long binPowLoopMOD(long long base, long long exp, long MOD){
+	long long r = 1;
+	while (exp > 0){
+		if( exp & 1)
+			r = (r*base) % MOD;
+		exp >>= 1;
+		base = (base * base) % MOD;
+	}
+	return r;
+} 
+
+long long binPowRecursiveMOD(long long a, long long b, long long MOD) {
+    if (b == 0)
+        return 1;
+    long long res = binpow(a, b / 2);
+    if (b % 2)
+        return (res * res * a) % MOD;
+    else
+        return (res * res) % MOD;
+}
+
+
+//gets the greatest common divisor of two numbers
+int gcd(int a, int b){
+    if(a == 0)
+        return b;
+    else
+        return gcd(b%a, a);
+}
+
+/*
+    convierte un string a un string con caracteres ordenados 
+    y guarda en bucket la cantidad de veces que esta una letra en el string inicial
+
+    regresa el tamanio del string final 
+
+    a - string inicial
+    bucket - vector que tiene cuantos hay de cada letra
+    s - string que guarda la lista de caracteres ordenados
+
+    ejemplo: 
+        IN: aaaazzzbbb
+        Out: s = abz
+            bucket = {4, 3, 3}
+            regresa 3
+
+*/
+int bucketString(string a, vi &bucket, string &s){
+    sort(a.begin(), a.end());
+    int sizeS = 1;
+    s = a.substr(0, 1);
+    bucket.push_back(0);
+ 
+    for(char c : a){
+        if( c == s[sizeS-1])
+            ++bucket[sizeS-1];
+        else
+        {
+            s += c;
+            bucket.push_back(1);
+            ++sizeS;
+        }
+    }
+}

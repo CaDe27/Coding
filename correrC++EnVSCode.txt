@@ -1,0 +1,7 @@
+Utiliza (command + shift + B) -> (g++ build active file)
+
+Para utilizar un archivo como entrada puedes usar (en C++) usar esta línea:
+	if(fopen("case.txt", "r")) freopen("case.txt", "r", stdin);
+
+o si lo quieres dar como entrada en la terminal:
+	./NombrePrograma < archivoEntrada.txt > archivoSalida.txt

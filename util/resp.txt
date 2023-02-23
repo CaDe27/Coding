@@ -1,0 +1,9 @@
+
+Amazon AWS. (Sin fecha). Conceptos de árbol de expansión. Funcionamiento STP. Recuperado de: https://static-course-assets.s3.amazonaws.com/ScaN50ES/course/module2/2.1.2.5/2.1.2.5.html
+Arias, E. (Febrero, 2020). VTY lines. Recuperado de: https://learningnetwork.cisco.com/s/question/0D53i00000Kt7GR/vty-lines
+Bayardo, M. (Abril, 2021). Aleph. ¿Qués es un trunk en red? Recuperado de: https://aleph.org.mx/que-es-un-trunk-en-red
+CISCO Systems (2010). «Dynamic Trunking Protocol (DTP) Introduction» (online). CISCO Systems. Consultado el 13 de mayo de 2010. Recuperado de: https://www.cisco.com/c/en/us/tech/lan-switching/virtual-lans-vlan-trunking-protocol-vlans-vtp/index.html
+Cisco (Sin fecha). DEC y formatos BPDU 802.1d. Recuperado de: https://www.cisco.com/c/es_mx/support/docs/additional-legacy-protocols/dec-net/10691-3.pdf
+Cisco (Sin fecha). Inter-Switch Link y Formato de Trama IEEE 802.1Q. Recuperado de: https://www.cisco.com/c/es_mx/support/docs/lan-switching/8021q/17056-741-4.pdf
+Cisco (sin fecha). Protocolo de árbol de expansión. Recuperado de: https://www.cisco.com/c/es_mx/tech/lan-switching/spanning-tree-protocol/index.html
+Redes locales y globales. (Sin fecha). Indicadores LED en un conmutador. Recuperado de: https://sites.google.com/site/redeslocalesyglobales/2-aspectos-fisicos/5-dispositivos-de-interconexion-de-redes/4-conmutadores-switch/3-indicadores-led-en-un-conmutador
