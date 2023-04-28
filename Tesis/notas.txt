@@ -1,0 +1,15 @@
+Si puedes hacer lo de gamboa, de ir bajando/aumentando precio de cetes. 
+
+Pero si tu dinero no te da para pagar tantos meses, no importa mucho. 
+
+El chiste no es que sea solución exacta, sino una buena aproximación. 
+Que la velocidad de la aproximación sea independiente del pasivo
+    ¿heurísticas? métodos probabilisticos como el viajero?
+
+posibles formas de justificar:
+ * se minimiza lo no invertido
+ * cuánto gano invertido
+ * por cada unidad, cúanto gané?
+
+
+Es el precavido igual al original?
