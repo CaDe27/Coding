@@ -1,5 +1,5 @@
 import numpy as np
-maxN = 1000000
+#maxN = 1000000
 
 def mnss(index):
     if index >= n:
@@ -9,16 +9,19 @@ def mnss(index):
     return dp[index]
 
 def getResp():
-    it = 0
-    indexesResp = []
-    while it < n:
-        #lo tomo
-        if dp[it] == array[it] + (dp[it+2] if it + 2 < n else 0):
-            indexesResp.append(it)
-            it = it+2
+    resp = []
+    i = 0
+    while i < n:
+        # lo uso 
+        #ultimo del arreglo 
+        if dp[i] == array[i] + (dp[i+2] if i+2 < n else 0):
+            resp.append(i)
+            i = i+2
+        # no lo uso
         else:
-            it = it+1
-    return indexesResp
+            i = i+1
+    return resp
+        
 
 n = int(input())
 array = [int(num) for num in input().split(' ')]
@@ -26,3 +29,4 @@ visited = np.full([n], False)
 dp = np.full([n], 0)
 print(mnss(0))
 print(getResp())
+
