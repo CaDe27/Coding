@@ -1,0 +1,22 @@
+1s =  10^8 operaciones
+
+10^5 -> O( n log n)
+10^6 -> O( n )   
+10^3 -> O(n^2)
+10^18 -> O(log n)
+10 -> O(n!)
+
+
+2 7 15
+
+puede que ya este generado si soy un producto
+
+z = a bolsitas 
+2, 7, 15
+z-2
+z-7
+z-15
+
+si puedo generar
+2 4 6 7 8 9 10 11 12 13  
+
