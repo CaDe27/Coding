@@ -5,6 +5,9 @@
         "unordered_map": "cpp",
         "ios": "cpp",
         "set": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "stack": "cpp",
+        "queue": "cpp",
+        "vector": "cpp"
     }
 }

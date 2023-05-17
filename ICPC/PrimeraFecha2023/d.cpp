@@ -32,8 +32,9 @@ set<int> collection;
 unordered_map<int, int> newIndx;
 
 ll bit[maxN];
+int limit;
 void update(int pos, ll x){
-    while(pos < maxN){
+    while(pos < limit){
         bit[pos] = bit[pos] + x;
         pos += pos&(-pos);
     }
@@ -68,31 +69,31 @@ void readCollectionAndQueries(){
     }
 }
 
-
 void coordinateCompression(){
-    set<int> allIntegers;
+    vector<int> allIntegers;
     for(int i : originalCollection)
-        allIntegers.insert(i);
-    for (auto q : queries){
+        allIntegers.push_back(i);
+    for (pair<int, pii> q : queries){
         if(q.first == 1)
-            allIntegers.insert(q.second.first);
+            allIntegers.push_back(q.second.first);
         else{
-            allIntegers.insert(q.second.first);
-            allIntegers.insert(q.second.second);
+            allIntegers.push_back(q.second.first);
+            allIntegers.push_back(q.second.second);
         }
     }
+    sort(allIntegers.begin(), allIntegers.end());
     //ya tengo el set con todos los numeros ordenados
-    //
-    int i = 1;
-    for(int x : allIntegers){
-        newIndx[x] = i;
-        ++i;
+    int i = 0;
+    for(int indx = 0; indx < allIntegers.size(); ++indx){
+        if(indx == 0 || (allIntegers[indx] != allIntegers[indx-1])){
+            newIndx[allIntegers[indx]] = ++i;
+        }
     }
+    limit = i+1;
 }
 
 int main(){
     ios_base::sync_with_stdio(0); cin.tie(0);
-    if(fopen("case.txt", "r")) freopen("case.txt", "r", stdin);
 
     readCollectionAndQueries();
     coordinateCompression();
@@ -102,11 +103,12 @@ int main(){
         update(newIndx[x], 1);
     }
 
+    set<int> :: iterator it;
     int elem;
     loop(i, 0, q){
         if(queries[i].first == 1){
             elem = newIndx[queries[i].second.first];
-            auto it = collection.lower_bound(elem);
+            it = collection.lower_bound(elem);
             if(*it == elem)
                 continue;
             else if(it == collection.end()){
@@ -117,6 +119,8 @@ int main(){
                 collection.insert(elem);
                 update(*it, -1);
                 update(elem, 1);
+                if(queryBIT(*it, *it) == 0)
+                    collection.erase(*it);
             }
         }
         else{
