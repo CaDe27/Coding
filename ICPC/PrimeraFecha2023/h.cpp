@@ -37,13 +37,9 @@ int nll[200004];
 const int K = 26;
 
 struct Vertex {
-    int next[K];
+    int wordLeaf, link = -1, parent = -1, next[K], go[K];
     bool leaf = false;
-    int wordLeaf;
-    int parent = -1;
     char parentCharacter;
-    int link = -1;
-    int go[K];
 
     Vertex(int parent=-1, char ch='$') : parent(parent), parentCharacter(ch) {
         fill(begin(next), end(next), -1);
@@ -98,10 +94,7 @@ int nextLeafLink(int id){
         return 0;
     if(nll[id] == -1){
         int gl = get_link(id);
-        if(automatonNodes[gl].leaf)
-            nll[id] = gl;
-        else
-            nll[id] = nextLeafLink(gl);
+        nll[id] = automatonNodes[gl].leaf? gl : nextLeafLink(gl);
     }
     return nll[id];
 }
