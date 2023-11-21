@@ -1,5 +1,11 @@
 {
     "files.associations": {
-        "ostream": "cpp"
-    }
+        "ostream": "cpp",
+        "algorithm": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "set": "cpp",
+        "iostream": "cpp"
+    },
+    "cmake.configureOnOpen": false
 }

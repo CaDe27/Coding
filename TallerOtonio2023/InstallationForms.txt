@@ -1,0 +1,17 @@
+
+Mac
+Install brew from: https://brew.sh/
+Run: brew install gcc
+
+Windows
+run powershell as administrator
+Run: choco install  mingw
+
+Ubuntu
+Run:
+sudo apt update
+sudo apt install g++ 
+
+Install VS Code
+add c++ extension 
+

@@ -1,0 +1,23 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/carlosdelgado/Desktop/Coding/TallerOtonio2023/Round898/e'
+relocations:
+  - { offsetInCU: 0xE1, offset: 0xE1, size: 0x8, addend: 0x0, symName: __Z11waterNeedediPi, symObjAddr: 0x0, symBinAddr: 0x100003A3C, symSize: 0x90 }
+  - { offsetInCU: 0x3257, offset: 0x3257, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0xF4B8, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x342B, offset: 0x342B, size: 0x8, addend: 0x0, symName: _n, symObjAddr: 0xF4BC, symBinAddr: 0x100008004, symSize: 0x0 }
+  - { offsetInCU: 0x3446, offset: 0x3446, size: 0x8, addend: 0x0, symName: _x, symObjAddr: 0xF4C0, symBinAddr: 0x100008008, symSize: 0x0 }
+  - { offsetInCU: 0x3753, offset: 0x3753, size: 0x8, addend: 0x0, symName: __ZNSt8__detail30__integer_to_chars_is_unsignedIjEE, symObjAddr: 0x3E9, symBinAddr: 0x100003EA1, symSize: 0x0 }
+  - { offsetInCU: 0x376D, offset: 0x376D, size: 0x8, addend: 0x0, symName: __ZNSt8__detail30__integer_to_chars_is_unsignedImEE, symObjAddr: 0x3EA, symBinAddr: 0x100003EA2, symSize: 0x0 }
+  - { offsetInCU: 0x3787, offset: 0x3787, size: 0x8, addend: 0x0, symName: __ZNSt8__detail30__integer_to_chars_is_unsignedIyEE, symObjAddr: 0x3EB, symBinAddr: 0x100003EA3, symSize: 0x0 }
+  - { offsetInCU: 0x37AA, offset: 0x37AA, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_e.cpp, symObjAddr: 0x3BC, symBinAddr: 0x100003DF8, symSize: 0x14 }
+  - { offsetInCU: 0x37D9, offset: 0x37D9, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x380, symBinAddr: 0x100003DBC, symSize: 0x3C }
+  - { offsetInCU: 0x37E1, offset: 0x37E1, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_e.cpp, symObjAddr: 0x3BC, symBinAddr: 0x100003DF8, symSize: 0x14 }
+  - { offsetInCU: 0x37F0, offset: 0x37F0, size: 0x8, addend: 0x0, symName: __ZSt3maxIiERKT_S2_S2_, symObjAddr: 0x348, symBinAddr: 0x100003D84, symSize: 0x38 }
+  - { offsetInCU: 0x37F8, offset: 0x37F8, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x380, symBinAddr: 0x100003DBC, symSize: 0x3C }
+  - { offsetInCU: 0x383F, offset: 0x383F, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x288, symBinAddr: 0x100003CC4, symSize: 0xC0 }
+  - { offsetInCU: 0x3847, offset: 0x3847, size: 0x8, addend: 0x0, symName: __ZSt3maxIiERKT_S2_S2_, symObjAddr: 0x348, symBinAddr: 0x100003D84, symSize: 0x38 }
+  - { offsetInCU: 0x387F, offset: 0x387F, size: 0x8, addend: 0x0, symName: __Z5solvev, symObjAddr: 0x90, symBinAddr: 0x100003ACC, symSize: 0x1F8 }
+  - { offsetInCU: 0x3887, offset: 0x3887, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x288, symBinAddr: 0x100003CC4, symSize: 0xC0 }
+  - { offsetInCU: 0x393D, offset: 0x393D, size: 0x8, addend: 0x0, symName: __Z11waterNeedediPi, symObjAddr: 0x0, symBinAddr: 0x100003A3C, symSize: 0x90 }
+  - { offsetInCU: 0x3945, offset: 0x3945, size: 0x8, addend: 0x0, symName: __Z5solvev, symObjAddr: 0x90, symBinAddr: 0x100003ACC, symSize: 0x1F8 }
+...

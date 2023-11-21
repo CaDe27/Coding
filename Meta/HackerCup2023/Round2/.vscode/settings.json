@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "set": "cpp",
+        "stack": "cpp",
+        "__locale": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "vector": "cpp",
+        "ios": "cpp",
+        "__bit_reference": "cpp",
+        "__hash_table": "cpp",
+        "__tree": "cpp",
+        "map": "cpp",
+        "unordered_map": "cpp",
+        "ostream": "cpp"
+    }
+}

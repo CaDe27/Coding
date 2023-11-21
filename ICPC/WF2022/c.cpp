@@ -14,7 +14,6 @@ int main(){
     while(!foundLimit){
         ++limit;
         power = 1;
-
         powers[limit] = 1;
         while( power < n && m/powers[limit] >= limit){
             powers[limit] *= limit;

@@ -1,0 +1,23 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/carlosdelgado/Desktop/Coding/TallerOtonio2023/Sesion25Oct/DefendiendoCastillo'
+relocations:
+  - { offsetInCU: 0xF9, offset: 0xF9, size: 0x8, addend: 0x0, symName: __Z7sePuedexx, symObjAddr: 0x0, symBinAddr: 0x100003B8C, symSize: 0x154 }
+  - { offsetInCU: 0x321F, offset: 0x321F, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0xEB30, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x3243, offset: 0x3243, size: 0x8, addend: 0x0, symName: _n, symObjAddr: 0xEB38, symBinAddr: 0x100008008, symSize: 0x0 }
+  - { offsetInCU: 0x325E, offset: 0x325E, size: 0x8, addend: 0x0, symName: _r, symObjAddr: 0xEB40, symBinAddr: 0x100008010, symSize: 0x0 }
+  - { offsetInCU: 0x3290, offset: 0x3290, size: 0x8, addend: 0x0, symName: _a, symObjAddr: 0xEB48, symBinAddr: 0x100008018, symSize: 0x0 }
+  - { offsetInCU: 0x32CC, offset: 0x32CC, size: 0x8, addend: 0x0, symName: _decrementos, symObjAddr: 0x3DF448, symBinAddr: 0x1003D8918, symSize: 0x0 }
+  - { offsetInCU: 0x35CF, offset: 0x35CF, size: 0x8, addend: 0x0, symName: __ZNSt8__detail30__integer_to_chars_is_unsignedIjEE, symObjAddr: 0x322, symBinAddr: 0x100003EFA, symSize: 0x0 }
+  - { offsetInCU: 0x35E9, offset: 0x35E9, size: 0x8, addend: 0x0, symName: __ZNSt8__detail30__integer_to_chars_is_unsignedImEE, symObjAddr: 0x323, symBinAddr: 0x100003EFB, symSize: 0x0 }
+  - { offsetInCU: 0x3603, offset: 0x3603, size: 0x8, addend: 0x0, symName: __ZNSt8__detail30__integer_to_chars_is_unsignedIyEE, symObjAddr: 0x324, symBinAddr: 0x100003EFC, symSize: 0x0 }
+  - { offsetInCU: 0x3638, offset: 0x3638, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_DefendiendoCastillo.cpp, symObjAddr: 0x30C, symBinAddr: 0x100003E98, symSize: 0x14 }
+  - { offsetInCU: 0x3655, offset: 0x3655, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x2D0, symBinAddr: 0x100003E5C, symSize: 0x3C }
+  - { offsetInCU: 0x365D, offset: 0x365D, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_DefendiendoCastillo.cpp, symObjAddr: 0x30C, symBinAddr: 0x100003E98, symSize: 0x14 }
+  - { offsetInCU: 0x3675, offset: 0x3675, size: 0x8, addend: 0x0, symName: __ZSt3minIxERKT_S2_S2_, symObjAddr: 0x298, symBinAddr: 0x100003E24, symSize: 0x38 }
+  - { offsetInCU: 0x367D, offset: 0x367D, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x2D0, symBinAddr: 0x100003E5C, symSize: 0x3C }
+  - { offsetInCU: 0x36B8, offset: 0x36B8, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x154, symBinAddr: 0x100003CE0, symSize: 0x144 }
+  - { offsetInCU: 0x36C0, offset: 0x36C0, size: 0x8, addend: 0x0, symName: __ZSt3minIxERKT_S2_S2_, symObjAddr: 0x298, symBinAddr: 0x100003E24, symSize: 0x38 }
+  - { offsetInCU: 0x375F, offset: 0x375F, size: 0x8, addend: 0x0, symName: __Z7sePuedexx, symObjAddr: 0x0, symBinAddr: 0x100003B8C, symSize: 0x154 }
+  - { offsetInCU: 0x3767, offset: 0x3767, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x154, symBinAddr: 0x100003CE0, symSize: 0x144 }
+...

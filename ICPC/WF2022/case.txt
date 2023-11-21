@@ -1,1 +1,26 @@
-8 51000
+5 1
+..XX.
+
+5 5
+....X
+.X...
+.....
+X..X.
+..X..
+
+// paths[0].resize(2);
+    // paths[0][0] = 13;
+    // paths[0][1] = 13+18;
+    // paths[1].resize(2);
+    // paths[1][0] = 3;
+    // paths[1][1] = 3+11;
+    // paths[2].resize(2);
+    // paths[2][0] = 0;
+    // paths[2][1] = 3;
+    // paths[3].resize(2);
+    // paths[3][0] = 0;
+    // paths[3][1] = 7;
+    // paths[4].resize(2);
+    // paths[4][0] = 7;
+    // paths[4][1] = 7+15;
+    //cout<<"acabé Paths"<<endl;
